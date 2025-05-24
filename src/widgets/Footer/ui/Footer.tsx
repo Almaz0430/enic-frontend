@@ -88,7 +88,7 @@ export const Footer = () => {
                   to={link.path} 
                   className="block text-white/70 hover:text-white transition-colors py-1"
                 >
-                  • {link.title}
+                  {link.title}
                 </Link>
               ))}
             </div>
@@ -104,7 +104,7 @@ export const Footer = () => {
                   to={link.path} 
                   className="block text-white/70 hover:text-white transition-colors py-1"
                 >
-                  • {link.title}
+                  {link.title}
                 </Link>
               ))}
             </div>

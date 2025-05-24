@@ -30,7 +30,7 @@ export const NewsFeed = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-primary">Новости</h2>
-          <Link to="/news" className="flex items-center text-accent font-medium hover:text-accent-dark transition-colors">
+          <Link to="/news" className="flex items-center text-gray-500 font-medium hover:text-gray-700 transition-colors">
             Все новости <span className="ml-2">→</span>
           </Link>
         </div>
