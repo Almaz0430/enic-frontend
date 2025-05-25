@@ -1,9 +1,15 @@
-import { Layout } from '@widgets/Layout';
+import { Header } from '@widgets/Header';
+import { Footer } from '@widgets/Footer';
 
 const AccreditationPage = () => {
   return (
-    <Layout>
-      <main className="flex-grow">
+    <>
+      <Header />
+      <div className="relative min-h-screen bg-gradient-to-b from-primary/5 to-white">
+        {/* Декоративные элементы */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary/10 rounded-full blur-xl"></div>
+        
         {/* Верхний баннер с заголовком */}
         <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-16 relative overflow-hidden">
           {/* Декоративные элементы */}
@@ -23,31 +29,36 @@ const AccreditationPage = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Аккредитация <span className="text-secondary">образовательных программ</span>
+              Аккредитация <span className="text-accent">образовательных программ</span>
             </h1>
             
-            <p className="text-lg mb-8 text-white/80 max-w-2xl">
-              Профессионально-общественная аккредитация образовательных программ – это процедура признания качества 
-              и уровня подготовки выпускников, отвечающих требованиям профессиональных стандартов, 
-              требованиям рынка труда к специалистам соответствующего профиля.
-            </p>
+            <div className="relative mb-6">
+              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-accent"></div>
+              <p className="text-lg mb-8 text-white/90 max-w-2xl pl-4">
+                Профессионально-общественная аккредитация образовательных программ – это процедура признания качества 
+                и уровня подготовки выпускников, отвечающих требованиям профессиональных стандартов, 
+                требованиям рынка труда к специалистам соответствующего профиля.
+              </p>
+            </div>
           </div>
         </section>
 
         <div className="container-custom py-12 relative">
           {/* Информационный блок */}
-          <div className="mb-12 bg-white p-8 rounded-lg shadow-lg transform -mt-16 relative z-20">
-            <p className="text-gray-700 text-lg">
-              Наш центр предоставляет услуги по проведению профессионально-общественной аккредитации 
-              образовательных программ различного уровня, обеспечивая высокое качество и признание на рынке труда.
-            </p>
+          <div className="mb-12 bg-white p-8 rounded-xl shadow-lg transform -mt-16 relative z-20 transition-all duration-300 hover:shadow-xl">
+            <div className="max-w-3xl">
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Наш центр предоставляет услуги по проведению профессионально-общественной аккредитации 
+                образовательных программ различного уровня, обеспечивая высокое качество и признание на рынке труда.
+              </p>
+            </div>
           </div>
           
           {/* Блоки с преимуществами и видами программ */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-primary transition-transform hover:translate-y-[-5px]">
+            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="flex items-center mb-6">
-                <div className="bg-primary/10 p-3 rounded-full mr-4">
+                <div className="flex items-center justify-center bg-primary/10 w-16 h-16 rounded-full mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -72,9 +83,9 @@ const AccreditationPage = () => {
               </ul>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-secondary transition-transform hover:translate-y-[-5px]">
+            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="flex items-center mb-6">
-                <div className="bg-secondary/10 p-3 rounded-full mr-4">
+                <div className="flex items-center justify-center bg-secondary/10 w-16 h-16 rounded-full mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
@@ -146,7 +157,7 @@ const AccreditationPage = () => {
                   color: "accent"
                 }
               ].map((item) => (
-                <div key={item.step} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
+                <div key={item.step} className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <div className={`bg-${item.color} h-2`}></div>
                   <div className="p-6">
                     <div className={`w-12 h-12 rounded-full bg-${item.color}/10 flex items-center justify-center mb-4`}>
@@ -161,7 +172,7 @@ const AccreditationPage = () => {
           </div>
           
           {/* Блок с призывом к действию */}
-          <div className="bg-gradient-to-r from-primary to-primary-dark text-white p-10 rounded-xl shadow-lg relative overflow-hidden">
+          <div className="bg-gradient-to-br from-primary to-primary/90 text-white p-12 rounded-xl shadow-lg relative overflow-hidden">
             {/* Декоративные элементы */}
             <div className="absolute top-0 right-0">
               <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-10">
@@ -175,21 +186,21 @@ const AccreditationPage = () => {
             </div>
             
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">Подать заявку на аккредитацию</h2>
-              <p className="mb-8 text-white/80 max-w-2xl">
+              <h2 className="text-3xl font-bold mb-8">Подать заявку на аккредитацию</h2>
+              <p className="mb-8 text-white/90 max-w-2xl">
                 Для подачи заявки на проведение профессионально-общественной аккредитации образовательной программы 
                 заполните форму или свяжитесь с нами по указанным контактам.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/contacts" className="bg-white text-primary px-6 py-3 rounded-md font-semibold transition-all hover:bg-secondary hover:text-white shadow-lg hover:shadow-xl flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <a href="/contacts" className="bg-white text-primary px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-accent hover:text-white shadow-lg hover:shadow-xl flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
                   Связаться с нами
                 </a>
-                <button className="border-2 border-white px-6 py-3 rounded-md font-semibold transition-all hover:bg-white hover:text-primary shadow-lg hover:shadow-xl flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                <button className="border-2 border-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-white hover:text-primary shadow-lg hover:shadow-xl flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                   </svg>
                   Скачать форму заявки
                 </button>
@@ -197,8 +208,9 @@ const AccreditationPage = () => {
             </div>
           </div>
         </div>
-      </main>
-    </Layout>
+      </div>
+      <Footer />
+    </>
   );
 };
 

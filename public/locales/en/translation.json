@@ -1,0 +1,213 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "events": "Events",
+    "contacts": "Contacts",
+    "news": "News",
+    "bologna": "Bologna Process",
+    "accreditation": "Accreditation",
+    "recognition": "Recognition of Documents",
+    "notFound": "Page Not Found"
+  },
+  "header": {
+    "accessibility": "For visually impaired",
+    "logoAlt": "Logo",
+    "searchPlaceholder": "Search the site",
+    "login": "Log in"
+  },
+  "hero": {
+    "bolognaProcess": "Bologna process since 2010",
+    "title": "National Center",
+    "titleAccent": "for Higher Education Development",
+    "subtitle": "Subordinate organization of the Ministry of Science and Higher Education of the Republic of Kazakhstan",
+    "aboutButton": "About us",
+    "bolognaButton": "Bologna process",
+    "leadership": "Center leadership",
+    "positions": {
+      "director": "Director",
+      "deputyDirector": "Deputy Director",
+      "advisor": "Director's Advisor"
+    },
+    "degrees": {
+      "masterPublicAdmin": "Master of Public Administration",
+      "techSciCandidate": "Candidate of Technical Sciences",
+      "professor": "Professor"
+    }
+  },
+  "homePage": {
+    "infoBlocks": {
+      "recognition": {
+        "title": "Recognition of Foreign Education",
+        "description": "Assessment and recognition of foreign educational documents in accordance with international standards.",
+        "link": "Learn more"
+      },
+      "accreditation": {
+        "title": "Professional Accreditation",
+        "description": "Independent assessment of the quality of educational programs in accordance with labor market requirements.",
+        "link": "Learn more"
+      },
+      "bologna": {
+        "title": "Bologna Process",
+        "description": "Promoting the integration of Kazakhstan's education into the unified European educational space.",
+        "link": "Learn more"
+      }
+    }
+  },
+  "newsFeed": {
+    "title": "News",
+    "allNews": "All news",
+    "news": [
+      {
+        "title": "Opening of a new educational direction",
+        "date": "June 15, 2025",
+        "excerpt": "We are pleased to announce the launch of a new educational direction that will help develop..."
+      },
+      {
+        "title": "Results of the annual project competition",
+        "date": "May 3, 2025",
+        "excerpt": "The results of the annual project competition, in which more than 200 teams participated..."
+      },
+      {
+        "title": "International cooperation: new perspectives",
+        "date": "April 27, 2025",
+        "excerpt": "Our center has signed a cooperation agreement with leading international organizations..."
+      }
+    ]
+  },
+  "faqBlock": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions about our center",
+    "items": [
+      {
+        "question": "How to schedule a consultation?",
+        "answer": "You can schedule a consultation through the form on our website, by phone, or by sending a request to our email. Our specialists will contact you within 24 hours to confirm your appointment."
+      },
+      {
+        "question": "What documents are required to participate in the programs?",
+        "answer": "To participate in the programs, you need a passport, an application form, and, depending on the program, additional documents confirming your eligibility. You can get a complete list of documents for a specific program from our consultants."
+      },
+      {
+        "question": "Can I get support remotely?",
+        "answer": "Yes, most of our consultations and programs are available in an online format. We use modern video communication tools to ensure high-quality remote interaction with our clients."
+      },
+      {
+        "question": "What are the benefits of membership in the center's community?",
+        "answer": "Membership in our center's community provides access to exclusive events, discounts on paid services, the opportunity to participate in closed programs, as well as regular information newsletters and priority registration for popular events."
+      },
+      {
+        "question": "How to become a volunteer at the center?",
+        "answer": "To become a volunteer, fill out the application form on our website in the \"Volunteering\" section. After reviewing your application, we will invite you for an interview where we will discuss possible areas of cooperation and work schedule."
+      }
+    ]
+  },
+  "mapEmbed": {
+    "title": "How to find us",
+    "subtitle": "We are located within walking distance from the city center",
+    "mapTitle": "Center location map",
+    "address": {
+      "title": "Address",
+      "line1": "Republic of Kazakhstan, Astana,",
+      "line2": "70 Syganak Street, Office 202,",
+      "line3": "postal code: Z05K7B0"
+    },
+    "workingHours": {
+      "title": "Working hours",
+      "weekdays": "Mon-Fri: 9:00 AM - 6:00 PM",
+      "saturday": "Sat: 10:00 AM - 3:00 PM",
+      "sunday": "Sun: Closed"
+    },
+    "contacts": {
+      "title": "Contacts",
+      "phone": "Phone: +7 (7172) 57-20-75",
+      "email": "E-mail: cbpiam@n-k.kz"
+    }
+  },
+  "footer": {
+    "contactInfo": "Contact Information",
+    "address": {
+      "line1": "Republic of Kazakhstan, Astana,",
+      "line2": "70 Syganak Street, Office 202,",
+      "line3": "postal code: Z05K7B0"
+    },
+    "phone": "+7 (7172) 57-20-75",
+    "email": "cbpiam@n-k.kz",
+    "aboutCenter": "About the Center",
+    "aboutLinks": {
+      "structure": "Structure",
+      "leadership": "Leadership",
+      "team": "Team"
+    },
+    "additional": "Additional",
+    "additionalLinks": {
+      "procurement": "Procurement",
+      "careers": "Careers",
+      "privacy": "Privacy Policy",
+      "accessibility": "Version for visually impaired"
+    },
+    "copyright": "All rights reserved. RSE on REM \"National Center for Higher Education Development\" of the MSHE RK"
+  },
+  "newsPage": {
+    "title": "News and announcements",
+    "subtitle": "Current information about events, activities and important changes in the field of education, accreditation and international cooperation in Kazakhstan",
+    "stayUpdated": "Stay updated",
+    "categories": "Categories",
+    "allNews": "All news",
+    "events": "Events",
+    "recognition": "Document Recognition",
+    "accreditation": "Accreditation",
+    "cooperation": "International Cooperation",
+    "subscribe": {
+      "title": "Subscribe to news",
+      "description": "Subscribe to our newsletter to always be aware of the latest news and events in Kazakhstan. We only send important information and never spam.",
+      "emailPlaceholder": "Your email",
+      "button": "Subscribe",
+      "privacy": "By clicking the button, you agree to our personal data processing policy"
+    },
+    "notFound": {
+      "title": "News not found",
+      "description": "There are no available news for the selected category. Try selecting another category."
+    }
+  },
+  "contactsPage": {
+    "title": "Contacts and feedback",
+    "subtitle": "Contact us in any convenient way",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "workingHours": "Working hours",
+    "form": {
+      "title": "Feedback form",
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Your message has been successfully sent"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "How to apply for document recognition?",
+          "answer": "To apply for document recognition, you need to fill out an application and provide the necessary documents to our center."
+        },
+        {
+          "question": "How long does the recognition procedure take?",
+          "answer": "The recognition procedure takes from 30 to 45 working days from the moment of submitting a complete package of documents."
+        },
+        {
+          "question": "What documents are needed for accreditation?",
+          "answer": "For accreditation, it is necessary to provide constituent documents, licenses, curricula and programs, as well as other documents according to the list."
+        }
+      ]
+    }
+  },
+  "notFoundPage": {
+    "title": "Page Not Found",
+    "subtitle": "Unfortunately, the requested page does not exist",
+    "button": "Return to home page",
+    "recommendations": "Recommended sections"
+  }
+}

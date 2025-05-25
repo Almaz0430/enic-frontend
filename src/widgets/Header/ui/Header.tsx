@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, MagnifyingGlassIcon, UserIcon } from '@heroicons/react/24/outline';
 import { Breadcrumbs } from '@entities/Breadcrumbs';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitch } from '@features/language-switch';
 
 interface NavigationItem {
   name: string;
@@ -10,22 +12,22 @@ interface NavigationItem {
   current: boolean;
 }
 
-const navigation: NavigationItem[] = [
-  { name: 'О центре', href: '/about', current: false },
-  { name: 'Признание', href: '/recognition', current: false },
-  { name: 'Аккредитация', href: '/accreditation', current: false },
-  { name: 'Новости', href: '/news', current: false },
-  { name: 'Контакты', href: '/contacts', current: false },
-];
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export const Header = () => {
+  const { t } = useTranslation();
   const [isAccessibilityModeEnabled, setIsAccessibilityModeEnabled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [language, setLanguage] = useState('RU');
+
+  const navigation: NavigationItem[] = [
+    { name: t('navigation.about'), href: '/about', current: false },
+    { name: t('navigation.recognition'), href: '/recognition', current: false },
+    { name: t('navigation.accreditation'), href: '/accreditation', current: false },
+    { name: t('navigation.news'), href: '/news', current: false },
+    { name: t('navigation.contacts'), href: '/contacts', current: false },
+  ];
 
   const toggleAccessibilityMode = () => {
     setIsAccessibilityModeEnabled(!isAccessibilityModeEnabled);
@@ -46,27 +48,8 @@ export const Header = () => {
               <div className="container-custom">
                 <div className="flex justify-end items-center h-10">
                   {/* Переключатель языка */}
-                  <div className="flex items-center space-x-1 mr-4 text-sm">
-                    <button 
-                      onClick={() => setLanguage('RU')} 
-                      className={`px-2 py-1 ${language === 'RU' ? 'text-primary font-medium' : 'text-gray-500 hover:text-primary'}`}
-                    >
-                      RU
-                    </button>
-                    <span className="text-gray-300">|</span>
-                    <button 
-                      onClick={() => setLanguage('KZ')} 
-                      className={`px-2 py-1 ${language === 'KZ' ? 'text-primary font-medium' : 'text-gray-500 hover:text-primary'}`}
-                    >
-                      KZ
-                    </button>
-                    <span className="text-gray-300">|</span>
-                    <button 
-                      onClick={() => setLanguage('EN')} 
-                      className={`px-2 py-1 ${language === 'EN' ? 'text-primary font-medium' : 'text-gray-500 hover:text-primary'}`}
-                    >
-                      EN
-                    </button>
+                  <div className="flex items-center mr-4">
+                    <LanguageSwitch />
                   </div>
 
                   {/* Кнопка версии для слабовидящих */}
@@ -78,7 +61,7 @@ export const Header = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span>Для слабовидящих</span>
+                    <span>{t('header.accessibility')}</span>
                   </button>
                 </div>
               </div>
@@ -92,7 +75,7 @@ export const Header = () => {
                   <Link to="/" className="flex-shrink-0">
                     <img 
                       src="/src/assets/icon.svg" 
-                      alt="Логотип" 
+                      alt={t('header.logoAlt')} 
                       className="h-16 w-auto"
                     />
                   </Link>
@@ -121,7 +104,7 @@ export const Header = () => {
                     <div className="hidden md:flex items-center relative">
                       <input
                         type="text"
-                        placeholder="Поиск по сайту"
+                        placeholder={t('header.searchPlaceholder')}
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-64 px-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:border-primary text-sm"
@@ -135,7 +118,7 @@ export const Header = () => {
                       className="flex items-center text-gray-600 hover:text-primary transition-colors duration-200"
                     >
                       <UserIcon className="w-6 h-6" />
-                      <span className="ml-2 hidden md:block">Войти</span>
+                      <span className="ml-2 hidden md:block">{t('header.login')}</span>
                     </Link>
 
                     {/* Мобильное меню кнопка */}

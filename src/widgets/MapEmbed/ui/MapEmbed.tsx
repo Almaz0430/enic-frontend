@@ -1,10 +1,14 @@
+import { useTranslation } from 'react-i18next';
+
 export const MapEmbed = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-16 bg-gray-50">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-2">Как нас найти</h2>
-          <p className="text-gray-600">Мы расположены в шаговой доступности от центра города</p>
+          <h2 className="text-3xl font-bold text-primary mb-2">{t('mapEmbed.title')}</h2>
+          <p className="text-gray-600">{t('mapEmbed.subtitle')}</p>
         </div>
         
         <div className="bg-white p-4 rounded-lg shadow-md">
@@ -14,7 +18,7 @@ export const MapEmbed = () => {
               className="w-full h-[500px] border-0 rounded-lg"
               allowFullScreen 
               loading="lazy" 
-              title="Карта расположения центра"
+              title={t('mapEmbed.mapTitle')}
             ></iframe>
           </div>
         </div>
@@ -28,12 +32,12 @@ export const MapEmbed = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-xl text-primary">Адрес</h3>
+              <h3 className="font-bold text-xl text-primary">{t('mapEmbed.address.title')}</h3>
             </div>
             <div className="text-gray-600 ml-16">
-              <p className="mb-1">Республика Казахстан, г. Астана,</p>
-              <p className="mb-1">ул. Сыганак, 70, офис № 202,</p>
-              <p>почтовый индекс: Z05K7B0</p>
+              <p className="mb-1">{t('mapEmbed.address.line1')}</p>
+              <p className="mb-1">{t('mapEmbed.address.line2')}</p>
+              <p>{t('mapEmbed.address.line3')}</p>
             </div>
           </div>
           
@@ -44,12 +48,12 @@ export const MapEmbed = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-xl text-secondary">Часы работы</h3>
+              <h3 className="font-bold text-xl text-secondary">{t('mapEmbed.workingHours.title')}</h3>
             </div>
             <div className="text-gray-600 ml-16">
-              <p className="mb-1">Пн-Пт: 9:00 - 18:00</p>
-              <p className="mb-1">Сб: 10:00 - 15:00</p>
-              <p>Вс: Выходной</p>
+              <p className="mb-1">{t('mapEmbed.workingHours.weekdays')}</p>
+              <p className="mb-1">{t('mapEmbed.workingHours.saturday')}</p>
+              <p>{t('mapEmbed.workingHours.sunday')}</p>
             </div>
           </div>
           
@@ -60,11 +64,11 @@ export const MapEmbed = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-xl text-accent">Контакты</h3>
+              <h3 className="font-bold text-xl text-accent">{t('mapEmbed.contacts.title')}</h3>
             </div>
             <div className="text-gray-600 ml-16">
-              <p className="mb-1">Телефон: +7 (7172) 57-20-75</p>
-              <p>E-mail: cbpiam@n-k.kz</p>
+              <p className="mb-1">{t('mapEmbed.contacts.phone')}</p>
+              <p>{t('mapEmbed.contacts.email')}</p>
             </div>
           </div>
         </div>

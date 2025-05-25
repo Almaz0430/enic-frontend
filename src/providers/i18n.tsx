@@ -25,8 +25,8 @@ export const useI18n = () => {
 
 // Доступные языки
 const AVAILABLE_LANGUAGES = [
-  { code: 'ru', name: 'Русский' },
   { code: 'kz', name: 'Қазақша' },
+  { code: 'ru', name: 'Русский' },
   { code: 'en', name: 'English' }
 ];
 
@@ -36,7 +36,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'ru',
+    fallbackLng: 'kz',
     supportedLngs: AVAILABLE_LANGUAGES.map(lang => lang.code),
     debug: process.env.NODE_ENV === 'development',
     interpolation: {
@@ -59,7 +59,7 @@ interface I18nProviderProps {
 }
 
 export const I18nProvider = ({ children }: I18nProviderProps) => {
-  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'ru');
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'kz');
 
   // Функция для смены языка
   const changeLanguage = (lang: string) => {

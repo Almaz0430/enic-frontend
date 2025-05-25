@@ -1,290 +1,244 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Layout } from '../../../widgets/Layout/ui/Layout';
 
 const ContactsPage = () => {
+  const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     subject: '',
     message: ''
   });
+  const [formSuccess, setFormSuccess] = useState(false);
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Имитация отправки данных
-    console.log('Отправка формы', formData);
-    setSubmitted(true);
-    // Сброс формы
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-    
-    // В реальном приложении здесь был бы запрос к API
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    console.log('Form submitted:', formData);
+    // Здесь будет логика отправки формы
+    setFormSuccess(true);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setFormSuccess(false), 5000);
   };
+
+  const faqItems = [
+    {
+      question: t('contactsPage.faq.questions.0.question'),
+      answer: t('contactsPage.faq.questions.0.answer')
+    },
+    {
+      question: t('contactsPage.faq.questions.1.question'),
+      answer: t('contactsPage.faq.questions.1.answer')
+    },
+    {
+      question: t('contactsPage.faq.questions.2.question'),
+      answer: t('contactsPage.faq.questions.2.answer')
+    }
+  ];
 
   return (
     <Layout>
-      <div className="container-custom py-8">
-        <h1 className="text-3xl font-bold text-primary mb-6">Контакты и поддержка</h1>
+      {/* Верхний баннер с заголовком */}
+      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-12 relative overflow-hidden">
+        {/* Декоративные элементы */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-10 right-20 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
+        </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div>
-            <h2 className="text-2xl font-bold text-primary mb-6">Наши контакты</h2>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-primary mb-1">Адрес</h3>
-                    <p className="text-gray-600">
-                      г. Москва, ул. Примерная, д. 123<br />
-                      Индекс: 123456
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-primary mb-1">Email</h3>
-                    <p className="text-gray-600">
-                      Общие вопросы: info@центр-пример.рф<br />
-                      Техническая поддержка: support@центр-пример.рф
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-primary mb-1">Телефоны</h3>
-                    <p className="text-gray-600">
-                      Приемная: +7 (123) 456-78-90<br />
-                      Отдел по работе с документами: +7 (123) 456-78-91
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded-full mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-primary mb-1">Часы работы</h3>
-                    <p className="text-gray-600">
-                      Пн-Пт: 9:00 - 18:00<br />
-                      Сб: 10:00 - 15:00<br />
-                      Вс: Выходной
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <div className="container-custom relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            {t('contactsPage.title')}
+          </h1>
+          
+          <div className="relative mb-6">
+            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-accent"></div>
+            <p className="text-lg mb-8 text-white/90 max-w-2xl pl-4">
+              {t('contactsPage.subtitle')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container-custom py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {/* Карточка с адресом */}
+          <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-primary">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
             </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-primary mb-4">Социальные сети</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                  </svg>
-                </a>
-                <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 1 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                  </svg>
-                </a>
-                <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-                <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M21.543 7.104c.015.211.015.423.015.636 0 6.507-4.954 14.01-14.01 14.01v-.003A13.94 13.94 0 0 1 0 19.539a9.88 9.88 0 0 0 7.287-2.041 4.93 4.93 0 0 1-4.6-3.42 4.916 4.916 0 0 0 2.223-.084A4.926 4.926 0 0 1 .96 9.167v-.062a4.887 4.887 0 0 0 2.235.616A4.928 4.928 0 0 1 1.67 3.148 13.98 13.98 0 0 0 11.82 8.292a4.929 4.929 0 0 1 8.39-4.49 9.868 9.868 0 0 0 3.128-1.196 4.941 4.941 0 0 1-2.165 2.724A9.828 9.828 0 0 0 24 4.555a10.019 10.019 0 0 1-2.457 2.549z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">{t('contactsPage.address')}</h3>
+            <p className="text-gray-600">г. Астана, ул. Мәңгілік Ел, 8, БЦ "Алтын Орда", 15 этаж</p>
           </div>
           
-          <div>
-            <h2 className="text-2xl font-bold text-primary mb-6">Обратная связь</h2>
+          {/* Карточка с телефоном */}
+          <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-primary">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">{t('contactsPage.phone')}</h3>
+            <p className="text-gray-600">+7 (7172) 28-75-20</p>
+            <p className="text-gray-600">+7 (7172) 28-75-21</p>
+          </div>
+          
+          {/* Карточка с email */}
+          <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-primary">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">{t('contactsPage.email')}</h3>
+            <p className="text-gray-600">info@ncrvo.kz</p>
+            <p className="text-gray-600">support@ncrvo.kz</p>
+          </div>
+        </div>
+        
+        {/* Форма обратной связи и карта */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {/* Форма обратной связи */}
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold mb-6 text-gray-800">{t('contactsPage.form.title')}</h2>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              {submitted ? (
-                <div className="bg-green-50 text-green-700 p-4 rounded-md mb-6">
-                  <div className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <p className="font-medium">Ваше сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.</p>
-                  </div>
-                </div>
-              ) : null}
-              
+            {formSuccess ? (
+              <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mb-6 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-2 text-green-500">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{t('contactsPage.form.success')}</span>
+              </div>
+            ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 mb-2">ФИО</label>
-                  <input 
-                    type="text" 
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactsPage.form.name')}
+                  </label>
+                  <input
+                    type="text"
                     id="name"
                     name="name"
                     value={formData.name}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Введите ваше полное имя"
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                     required
                   />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700 mb-2">Телефон</label>
-                    <input 
-                      type="tel" 
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="+7 (___) ___-__-__"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactsPage.form.email')}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    required
+                  />
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-gray-700 mb-2">Тема обращения</label>
-                  <select 
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactsPage.form.subject')}
+                  </label>
+                  <input
+                    type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                     required
-                  >
-                    <option value="">Выберите тему</option>
-                    <option value="general">Общие вопросы</option>
-                    <option value="recognition">Признание документов</option>
-                    <option value="accreditation">Аккредитация</option>
-                    <option value="bologna">Болонский процесс</option>
-                    <option value="cooperation">Сотрудничество</option>
-                    <option value="other">Другое</option>
-                  </select>
+                  />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-gray-700 mb-2">Сообщение</label>
-                  <textarea 
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    {t('contactsPage.form.message')}
+                  </label>
+                  <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={5}
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Опишите ваш вопрос или предложение"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                     required
                   ></textarea>
                 </div>
                 
-                <div>
-                  <button 
-                    type="submit" 
-                    className="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-secondary transition-colors"
-                  >
-                    Отправить сообщение
-                  </button>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Нажимая кнопку, вы соглашаетесь с нашей политикой обработки персональных данных
-                  </p>
-                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg"
+                >
+                  {t('contactsPage.form.submit')}
+                </button>
               </form>
-            </div>
+            )}
           </div>
-        </div>
-        
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-6">Как нас найти</h2>
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.0748224044!2d37.61855001606132!3d55.75615298055642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2sKremlin!5e0!3m2!1sen!2sru!4v1616214696228!5m2!1sen!2sru" 
-              className="w-full h-[400px] border-0 rounded-lg"
-              allowFullScreen 
-              loading="lazy" 
-              title="Карта расположения центра"
+          
+          {/* Карта */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden h-[500px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.9720086731876!2d71.41285307712726!3d51.09037294388824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424585a605525605%3A0x4dff4a6d5473d51!2sMangilik%20El%20Ave%208%2C%20Astana%20010000%2C%20Kazakhstan!5e0!3m2!1sen!2sus!4v1688456085782!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Карта расположения офиса"
             ></iframe>
           </div>
         </div>
         
-        <div>
-          <h2 className="text-2xl font-bold text-primary mb-6">FAQ</h2>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-primary mb-2">Как подать документы на признание иностранного образования?</h3>
-                <p className="text-gray-600">Для подачи документов на признание иностранного образования вам необходимо заполнить форму на странице "Признание документов" или обратиться в наш центр лично в часы работы.</p>
+        {/* Часто задаваемые вопросы */}
+        <div className="bg-white rounded-xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold mb-8 text-gray-800">{t('contactsPage.faq.title')}</h2>
+          
+          <div className="space-y-6">
+            {faqItems.map((item, index) => (
+              <div 
+                key={index} 
+                className={`border-l-4 ${activeTab === index ? 'border-primary' : 'border-gray-200'} pl-4 transition-all duration-300`}
+              >
+                <button
+                  className="flex justify-between items-center w-full text-left"
+                  onClick={() => setActiveTab(activeTab === index ? -1 : index)}
+                >
+                  <h3 className="text-lg font-semibold text-gray-800">{item.question}</h3>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth={1.5} 
+                    stroke="currentColor" 
+                    className={`w-5 h-5 text-primary transition-transform duration-300 ${activeTab === index ? 'rotate-180' : ''}`}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                
+                {activeTab === index && (
+                  <div className="mt-2 text-gray-600 pl-2 animate-fadeIn">
+                    <p>{item.answer}</p>
+                  </div>
+                )}
               </div>
-              
-              <div>
-                <h3 className="font-semibold text-primary mb-2">Сколько занимает процедура признания документов?</h3>
-                <p className="text-gray-600">Стандартный срок рассмотрения документов составляет 30 рабочих дней с момента подачи полного комплекта документов. При необходимости проведения дополнительной экспертизы срок может быть увеличен.</p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-primary mb-2">Какие документы необходимы для аккредитации образовательной программы?</h3>
-                <p className="text-gray-600">Для аккредитации образовательной программы необходимо предоставить заявление, документы образовательной организации, сведения о программе, отчет о самообследовании и другие документы. Полный перечень можно получить, обратившись в наш центр.</p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-primary mb-2">Можно ли получить консультацию удаленно?</h3>
-                <p className="text-gray-600">Да, мы предоставляем консультации по всем вопросам удаленно - по телефону, электронной почте или через форму обратной связи на нашем сайте.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
