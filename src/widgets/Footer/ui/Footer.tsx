@@ -1,36 +1,44 @@
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
-  const links = [
-    { title: "30 ОП ПО", path: "/op-po" },
-    { title: "Часто задаваемые вопросы", path: "/faq" },
-    { title: "Система внутреннего обеспечения качества высшего образования: взгляд со всех сторон", path: "/quality-system" },
-    { title: "Академическая честность как фактор обеспечения качества высшего образования", path: "/academic-integrity" },
-    { title: "Сопредседательство Казахстана в Болонском процессе", path: "/bologna-process" },
-    { title: "Научные исследования", path: "/research" },
-    { title: "Отзывы", path: "/reviews" },
-    { title: "Аккредитация", path: "/accreditation" },
-    { title: "Корпоративная этика и противодействие коррупционным рискам", path: "/ethics" },
-    { title: "Лучшая практика дистанционного обучения в вузах РК", path: "/distance-learning" },
-    { title: "Международные проекты", path: "/international-projects" },
-    { title: "Национальная система квалификаций", path: "/qualification-system" },
-    { title: "Открытый доступ к высшему образованию", path: "/open-access" },
-    { title: "Привлечение зарубежных специалистов", path: "/foreign-specialists" },
-    { title: "Расширение автономии вузов", path: "/university-autonomy" },
-    { title: "Реестр образовательных программ высшего и послевузовского образования", path: "/education-registry" },
-    { title: "УЧЕБНО-МЕТОДИЧЕСКИЕ ОБЪЕДИНЕНИЯ РЕСПУБЛИКАНСКОГО УЧЕБНО-МЕТОДИЧЕСКОГО СОВЕТА ВЫСШЕГО И ПОСЛЕВУЗОВСКОГО ОБРАЗОВАНИЯ ПРИ ОВПО", path: "/educational-associations" }
+  const aboutLinks = [
+    { title: "Структура", path: "/structure" },
+    { title: "Руководство", path: "/leadership" },
+    { title: "Команда", path: "/team" },
   ];
 
-  // Разделяем ссылки на две колонки
-  const halfLength = Math.ceil(links.length / 2);
-  const firstColumnLinks = links.slice(0, halfLength);
-  const secondColumnLinks = links.slice(halfLength);
+  const additionalLinks = [
+    { title: "Закупки", path: "/procurement" },
+    { title: "Вакансии", path: "/careers" },
+    { title: "Политика конфиденциальности", path: "/privacy" },
+    { title: "Версия для слабовидящих", path: "#", onClick: () => document.documentElement.classList.toggle('high-contrast') },
+  ];
+
+  const socialLinks = [
+    {
+      title: "Facebook",
+      path: "https://facebook.com",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+        </svg>
+      )
+    },
+    {
+      title: "Instagram",
+      path: "https://instagram.com",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 1 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
+        </svg>
+      )
+    }
+  ];
 
   return (
     <footer className="bg-primary text-white pt-16 pb-8">
       <div className="container-custom">
-        {/* Основной контент футера */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
           {/* Контактная информация */}
           <div>
             <h4 className="text-xl font-bold mb-6 border-b border-white/20 pb-2">Контактная информация</h4>
@@ -59,30 +67,27 @@ export const Footer = () => {
                 <span>cbpiam@n-k.kz</span>
               </p>
               <div className="flex space-x-4 mt-6">
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                  </svg>
-                </a>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 1 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                  </svg>
-                </a>
-                <a href="#" className="text-white/70 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
+                {socialLinks.map((social, index) => (
+                  <a 
+                    key={index}
+                    href={social.path} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white transition-colors"
+                    aria-label={social.title}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Первая колонка ссылок */}
+          {/* О Центре */}
           <div>
-            <h4 className="text-xl font-bold mb-6 border-b border-white/20 pb-2">Информация</h4>
-            <div className="space-y-2">
-              {firstColumnLinks.map((link, index) => (
+            <h4 className="text-xl font-bold mb-6 border-b border-white/20 pb-2">О Центре</h4>
+            <div className="space-y-3">
+              {aboutLinks.map((link, index) => (
                 <Link 
                   key={index} 
                   to={link.path} 
@@ -94,14 +99,15 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Вторая колонка ссылок */}
+          {/* Дополнительные ссылки */}
           <div>
             <h4 className="text-xl font-bold mb-6 border-b border-white/20 pb-2">Дополнительно</h4>
-            <div className="space-y-2">
-              {secondColumnLinks.map((link, index) => (
+            <div className="space-y-3">
+              {additionalLinks.map((link, index) => (
                 <Link 
                   key={index} 
                   to={link.path} 
+                  onClick={link.onClick}
                   className="block text-white/70 hover:text-white transition-colors py-1"
                 >
                   {link.title}
@@ -113,7 +119,7 @@ export const Footer = () => {
 
         {/* Копирайт */}
         <div className="border-t border-white/20 pt-8 text-center text-sm text-white/70">
-          <p>&copy; {new Date().getFullYear()} Все права защищены.РГП на ПХВ "Национальный Центр развития высшего образования" МНВО РК</p>
+          <p>&copy; {new Date().getFullYear()} Все права защищены. РГП на ПХВ "Национальный Центр развития высшего образования" МНВО РК</p>
         </div>
       </div>
     </footer>

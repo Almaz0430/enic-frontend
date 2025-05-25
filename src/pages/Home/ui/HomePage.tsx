@@ -1,8 +1,13 @@
-import { Layout } from '../../../widgets/Layout/ui/Layout';
+import { Layout } from '@widgets/Layout';
+import { HeroBanner } from '@widgets/HeroBanner';
+import { NewsFeed } from '@widgets/NewsFeed';
+import { FAQBlock } from '@widgets/FAQBlock';
+import { MapEmbed } from '@widgets/MapEmbed';
 
 const HomePage = () => {
   return (
     <Layout>
+      <HeroBanner />
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mt-8">
           <div className="bg-gradient-to-br from-primary/5 to-primary/20 rounded-xl shadow-md p-6 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
@@ -54,6 +59,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <NewsFeed />
+      <FAQBlock />
+      <MapEmbed />
     </Layout>
   );
 };

@@ -1,10 +1,8 @@
-import { Header } from '../../../widgets/Header/ui/Header';
-import { Footer } from '../../../widgets/Footer/ui/Footer';
+import { Layout } from '@widgets/Layout';
 
 const AccreditationPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <Layout>
       <main className="flex-grow">
         {/* Верхний баннер с заголовком */}
         <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-16 relative overflow-hidden">
@@ -200,8 +198,7 @@ const AccreditationPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
