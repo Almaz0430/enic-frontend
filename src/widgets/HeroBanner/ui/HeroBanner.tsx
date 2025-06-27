@@ -90,7 +90,7 @@ export const HeroBanner = () => {
                         <div className="slider-slide slide-active" id="slide-1">
                           <div className="slide-image">
                             <img 
-                              src="/src/assets/managers/farkhad shaymuratovich.webp" 
+                              src="/static/assets/managers/farkhad shaymuratovich.webp" 
                               alt="Директор центра" 
                               className="w-full h-full object-cover object-center"
                             />
@@ -108,7 +108,7 @@ export const HeroBanner = () => {
                         <div className="slider-slide" id="slide-2">
                           <div className="slide-image">
                             <img 
-                              src="/src/assets/managers/yerzhan tursynkhanuly.webp" 
+                              src="/static/assets/managers/yerzhan tursynkhanuly.webp" 
                               alt="Заместитель директора" 
                               className="w-full h-full object-cover object-center"
                             />
@@ -126,7 +126,7 @@ export const HeroBanner = () => {
                         <div className="slider-slide" id="slide-3">
                           <div className="slide-image">
                             <img 
-                              src="/src/assets/managers/alibek sergazyyevich.webp" 
+                              src="/static/assets/managers/alibek sergazyyevich.webp" 
                               alt="Заместитель директора" 
                               className="w-full h-full object-cover object-center"
                             />
@@ -144,7 +144,7 @@ export const HeroBanner = () => {
                         <div className="slider-slide" id="slide-4">
                           <div className="slide-image">
                             <img 
-                              src="/src/assets/managers/shynġys nūrlanūly.webp" 
+                              src="/static/assets/managers/shynġys nūrlanūly.webp" 
                               alt="Заместитель директора" 
                               className="w-full h-full object-cover object-center"
                             />
@@ -162,7 +162,7 @@ export const HeroBanner = () => {
                         <div className="slider-slide" id="slide-5">
                           <div className="slide-image">
                             <img 
-                              src="/src/assets/managers/amantay abilkhairovich.webp" 
+                              src="/static/assets/managers/amantay abilkhairovich.webp" 
                               alt="Советник директора" 
                               className="w-full h-full object-cover object-center"
                             />

@@ -2,6 +2,7 @@ export { RouterProvider } from './router';
 export { QueryProvider } from './query';
 export { I18nProvider, useI18n } from './i18n';
 export { ThemeProvider, useTheme, ThemeSwitcher } from './theme';
+export { ScrollToTop } from './ScrollToTop';
 
 // Композитный провайдер, объединяющий все провайдеры
 import type { ReactNode } from 'react';

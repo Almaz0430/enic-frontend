@@ -4,16 +4,41 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/static/',
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@widgets': path.resolve(__dirname, './src/widgets'),
-      '@features': path.resolve(__dirname, './src/features'),
-      '@entities': path.resolve(__dirname, './src/entities'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@providers': path.resolve(__dirname, './src/providers'),
+      '@': path.resolve(__dirname, 'src'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@widgets': path.resolve(__dirname, 'src/widgets'),
+      '@features': path.resolve(__dirname, 'src/features'),
+      '@entities': path.resolve(__dirname, 'src/entities'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@providers': path.resolve(__dirname, 'src/providers'),
     },
   },
-})
+  build: {
+    outDir: '../backend/static/frontend',
+    emptyOutDir: true,
+    assetsDir: 'assets',
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/admin': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/media': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+}) 

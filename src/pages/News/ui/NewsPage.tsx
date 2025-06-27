@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Layout } from '../../../widgets/Layout/ui/Layout';
 
 const NewsPage = () => {
   const { t } = useTranslation();
+  const { id } = useParams();
   const [activeCategory, setActiveCategory] = useState('all');
   
   const newsItems = [
@@ -14,7 +15,8 @@ const NewsPage = () => {
       date: '15 июня 2025',
       category: 'events',
       excerpt: 'Мы рады сообщить о запуске нового образовательного направления в столице Казахстана, которое поможет развить необходимые компетенции в области управления качеством образования.',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+      content: 'Центр Болонского процесса и академической мобильности рад представить новое образовательное направление в Астане. Данная программа разработана с учетом современных требований к качеству образования и направлена на подготовку высококвалифицированных специалистов в области управления образовательными процессами. Программа включает в себя как теоретические, так и практические модули, которые помогут слушателям приобрести необходимые навыки и компетенции.'
     },
     {
       id: 2,
@@ -22,7 +24,8 @@ const NewsPage = () => {
       date: '3 мая 2025',
       category: 'events',
       excerpt: 'Подведены итоги ежегодного конкурса проектов, в котором приняли участие более 200 команд из различных регионов Казахстана.',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+      content: 'Мы рады объявить результаты ежегодного конкурса образовательных проектов, который проводился под эгидой Центра Болонского процесса и академической мобильности. В этом году конкурс привлек рекордное количество участников - более 200 команд из всех регионов Казахстана представили свои инновационные проекты в области образования. Проекты оценивались экспертной комиссией по нескольким критериям, включая инновационность, практическую применимость и социальную значимость.'
     },
     {
       id: 3,
@@ -82,6 +85,87 @@ const NewsPage = () => {
     { id: 'cooperation', name: t('newsPage.cooperation') }
   ];
   
+  // Если есть id в параметрах URL, показываем детальную страницу
+  if (id) {
+    const newsItem = newsItems.find(item => item.id === parseInt(id, 10));
+    
+    // Если новость не найдена, показываем сообщение об ошибке
+    if (!newsItem) {
+      return (
+        <Layout>
+          <div className="container-custom py-16">
+            <div className="bg-red-50 p-8 rounded-lg text-center my-12">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-red-400 mx-auto mb-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">{t('newsPage.notFound.title')}</h2>
+              <p className="text-gray-600 mb-6">{t('newsPage.notFound.description')}</p>
+              <Link to="/news" className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                </svg>
+                {t('newsPage.backToNews')}
+              </Link>
+            </div>
+          </div>
+        </Layout>
+      );
+    }
+    
+    // Если новость найдена, показываем детальную страницу
+    return (
+      <Layout>
+        {/* Верхний баннер с заголовком */}
+        <div className="bg-primary/5">
+          <div className="container-custom py-4">
+            <Link to="/news" className="inline-flex items-center text-gray-500 hover:text-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 mr-1">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+              {t('newsPage.backToAll')}
+            </Link>
+          </div>
+        </div>
+        
+        <article className="container-custom py-12">
+          <div className="mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              {newsItem.title}
+            </h1>
+            <div className="flex items-center mb-6">
+              <span className="text-sm text-gray-500 flex items-center mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 mr-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                </svg>
+                {newsItem.date}
+              </span>
+              <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
+                {categories.find(cat => cat.id === newsItem.category)?.name || t('newsPage.allNews')}
+              </span>
+            </div>
+          </div>
+          
+          <div className="rounded-xl overflow-hidden mb-8 shadow-lg">
+            <img 
+              src={newsItem.image} 
+              alt={newsItem.title}
+              className="w-full h-96 object-cover" 
+            />
+          </div>
+          
+          <div className="prose prose-lg max-w-none">
+            {newsItem.content ? (
+              <p>{newsItem.content}</p>
+            ) : (
+              <p>{newsItem.excerpt}</p>
+            )}
+          </div>
+        </article>
+      </Layout>
+    );
+  }
+  
+  // Если id нет в параметрах URL, показываем список новостей
   const filteredNews = activeCategory === 'all' 
     ? newsItems 
     : newsItems.filter(item => item.category === activeCategory);
@@ -167,7 +251,6 @@ const NewsPage = () => {
                   </span>
                 </div>
               </div>
-              <p className="text-gray-600 line-clamp-2 group-hover:text-primary transition-colors duration-300">{item.excerpt}</p>
             </Link>
           ))}
         </div>

@@ -43,6 +43,12 @@ export const Breadcrumbs = () => {
         translationKey = 'navigation.recognition';
       } else if (pathnames[i] === '404') {
         translationKey = 'navigation.notFound';
+      } else if (pathnames[i] === 'login') {
+        translationKey = 'auth.login.title';
+      } else if (pathnames[i] === 'register') {
+        translationKey = 'auth.register.title';
+      } else if (pathnames[i] === 'register-university') {
+        translationKey = 'auth.registerUniversity.title';
       } else {
         // Если нет перевода, используем текст как есть
         translationKey = null;

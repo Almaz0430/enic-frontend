@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && npm run copy-assets",
+    "copy-assets": "if not exist ..\\backend\\static\\locales mkdir ..\\backend\\static\\locales && xcopy /E /I /Y public\\locales\\* ..\\backend\\static\\locales\\ && if not exist ..\\backend\\static\\assets mkdir ..\\backend\\static\\assets && xcopy /E /I /Y src\\assets\\* ..\\backend\\static\\assets\\",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss}\"",
@@ -17,7 +18,9 @@
     "@tanstack/react-query": "^5.76.1",
     "@tanstack/react-query-devtools": "^5.76.1",
     "@types/node": "^22.15.18",
+    "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.21",
+    "axios": "^1.9.0",
     "framer-motion": "^12.12.1",
     "i18next": "^25.1.3",
     "i18next-browser-languagedetector": "^8.1.0",
@@ -25,8 +28,9 @@
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.56.4",
     "react-i18next": "^15.5.1",
-    "react-router-dom": "^7.6.0"
+    "react-router-dom": "^7.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

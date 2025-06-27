@@ -1,4 +1,8 @@
 {
+  "app": {
+    "name": "ENIC Kazakhstan",
+    "description": "National Information Center for Academic Mobility"
+  },
   "navigation": {
     "home": "Home",
     "about": "About us",
@@ -8,7 +12,7 @@
     "news": "News",
     "bologna": "Bologna Process",
     "accreditation": "Accreditation",
-    "recognition": "Recognition of Documents",
+    "recognition": "Recognition",
     "notFound": "Page Not Found"
   },
   "header": {
@@ -37,21 +41,23 @@
     }
   },
   "homePage": {
+    "title": "Welcome to ENIC Kazakhstan",
+    "subtitle": "National Information Center for Academic Mobility",
     "infoBlocks": {
       "recognition": {
-        "title": "Recognition of Foreign Education",
-        "description": "Assessment and recognition of foreign educational documents in accordance with international standards.",
-        "link": "Learn more"
+        "title": "Education Recognition",
+        "description": "Information about foreign education document recognition procedures",
+        "link": "Learn More"
       },
       "accreditation": {
-        "title": "Professional Accreditation",
-        "description": "Independent assessment of the quality of educational programs in accordance with labor market requirements.",
-        "link": "Learn more"
+        "title": "Accreditation",
+        "description": "Information about educational program accreditation procedures",
+        "link": "Learn More"
       },
       "bologna": {
         "title": "Bologna Process",
-        "description": "Promoting the integration of Kazakhstan's education into the unified European educational space.",
-        "link": "Learn more"
+        "description": "Information about the implementation of the Bologna Process principles in Kazakhstan",
+        "link": "Learn More"
       }
     }
   },
@@ -105,7 +111,13 @@
   "mapEmbed": {
     "title": "How to find us",
     "subtitle": "We are located within walking distance from the city center",
+    "location": "Our location",
     "mapTitle": "Center location map",
+    "mapView": "Map",
+    "satelliteView": "Satellite",
+    "weAreHere": "We are here",
+    "contactInfo": "Contact information",
+    "getDirections": "Get directions",
     "address": {
       "title": "Address",
       "line1": "Republic of Kazakhstan, Astana,",
@@ -114,14 +126,18 @@
     },
     "workingHours": {
       "title": "Working hours",
-      "weekdays": "Mon-Fri: 9:00 AM - 6:00 PM",
-      "saturday": "Sat: 10:00 AM - 3:00 PM",
-      "sunday": "Sun: Closed"
+      "mondayFriday": "Monday-Friday",
+      "saturdayLabel": "Saturday",
+      "sundayLabel": "Sunday",
+      "weekdays": "9:00 AM - 6:00 PM",
+      "saturday": "10:00 AM - 3:00 PM",
+      "sunday": "Closed"
     },
     "contacts": {
       "title": "Contacts",
       "phone": "Phone: +7 (7172) 57-20-75",
-      "email": "E-mail: cbpiam@n-k.kz"
+      "email": "E-mail: cbpiam@n-k.kz",
+      "followUs": "Follow us"
     }
   },
   "footer": {
@@ -206,8 +222,99 @@
   },
   "notFoundPage": {
     "title": "Page Not Found",
-    "subtitle": "Unfortunately, the requested page does not exist",
-    "button": "Return to home page",
-    "recommendations": "Recommended sections"
+    "subtitle": "Sorry, the requested page does not exist",
+    "button": "Return to Home",
+    "recommendations": "You might be looking for:"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Sign in to your account to access your personal dashboard",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "loading": "Signing in...",
+      "success": "Successfully signed in! Redirecting...",
+      "noAccount": "Don't have an account?",
+      "register": "Register",
+      "university": "Are you a university representative?",
+      "registerUniversity": "Register University"
+    },
+    "register": {
+      "title": "Registration",
+      "subtitle": "Create a new account",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "passwordConfirm": "Confirm Password",
+      "passwordConfirmPlaceholder": "Repeat your password",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "submit": "Register",
+      "loading": "Registering...",
+      "success": "Registration successful! Redirecting...",
+      "haveAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "registerUniversity": {
+      "title": "University Registration",
+      "subtitle": "Create an account for your university and get access to advanced platform features",
+      "email": "Email",
+      "emailPlaceholder": "Enter university email",
+      "universityName": "University Name",
+      "universityNamePlaceholder": "Enter full university name",
+      "password": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "passwordConfirm": "Confirm Password",
+      "passwordConfirmPlaceholder": "Repeat password",
+      "submit": "Register University",
+      "loading": "Registering...",
+      "success": "Registration completed successfully! Redirecting...",
+      "hasAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "logout": "Sign Out",
+    "loginError": "Invalid email or password",
+    "registerError": "Registration error",
+    "passwordMismatch": "Passwords do not match",
+    "requiredField": "Required field"
+  },
+  "profile": {
+    "title": "Personal Dashboard",
+    "subtitle": "Manage your account and settings",
+    "mainInfo": "Main Information",
+    "additionalInfo": "Additional Information",
+    "email": "Email",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "universityName": "University Name",
+    "role": "Role",
+    "registrationDate": "Registration Date",
+    "edit": "Edit Profile",
+    "changePassword": "Change Password",
+    "error": "Failed to load profile data",
+    "roles": {
+      "user": "User",
+      "admin": "Administrator",
+      "university": "University"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "noResults": "No results found",
+    "required": "Required field",
+    "optional": "Optional field"
   }
 }
