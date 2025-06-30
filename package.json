@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run copy-assets",
-    "copy-assets": "if not exist ..\\backend\\static\\locales mkdir ..\\backend\\static\\locales && xcopy /E /I /Y public\\locales\\* ..\\backend\\static\\locales\\ && if not exist ..\\backend\\static\\assets mkdir ..\\backend\\static\\assets && xcopy /E /I /Y src\\assets\\* ..\\backend\\static\\assets\\",
+    "copy-assets": "if not exist ..\\backend\\static\\frontend\\locales mkdir ..\\backend\\static\\frontend\\locales && xcopy /E /I /Y public\\locales\\* ..\\backend\\static\\frontend\\locales\\ && if not exist ..\\backend\\static\\frontend\\assets mkdir ..\\backend\\static\\frontend\\assets && xcopy /E /I /Y src\\assets\\* ..\\backend\\static\\frontend\\assets\\",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss}\"",

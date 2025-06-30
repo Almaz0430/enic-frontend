@@ -136,7 +136,7 @@ export const Header = () => {
               <div className="container-custom">
                 <div className="flex justify-end items-center h-10">
                   {/* Переключатель языка */}
-                  <div className="flex items-center mr-4">
+                  <div className="mr-4">
                     <LanguageSwitch />
                   </div>
 
@@ -162,7 +162,7 @@ export const Header = () => {
                   {/* Логотип */}
                   <Link to="/" className="flex-shrink-0">
                     <img 
-                      src="/static/assets/icon.svg" 
+                      src="/assets/icon.svg" 
                       alt={t('header.logoAlt')} 
                       className="h-16 w-auto"
                     />

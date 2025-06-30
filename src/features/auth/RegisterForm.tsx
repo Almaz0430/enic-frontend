@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Layout } from '@widgets/Layout/ui/Layout';
+import { AuthLayout } from '@widgets/Layout/ui/AuthLayout';
 
 export const RegisterForm: React.FC = () => {
   const { t } = useTranslation();
@@ -46,34 +46,28 @@ export const RegisterForm: React.FC = () => {
   };
 
   return (
-    <Layout>
-      {/* Верхний баннер с заголовком */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-12 relative overflow-hidden">
-        {/* Декоративные элементы */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-          <div className="absolute bottom-10 right-20 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
-        </div>
-        
-        <div className="container-custom relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            {t('auth.register.title')}
-          </h1>
-          
-          <div className="relative mb-6">
-            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-accent"></div>
-            <p className="text-lg mb-8 text-white/90 max-w-2xl pl-4">
-              {t('auth.register.subtitle')}
-            </p>
+    <AuthLayout>
+      <div className="flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <div className="text-center">
+            <div className="bg-white/10 inline-block rounded-lg px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 backdrop-blur-sm">
+              <span className="text-white/90 text-sm sm:text-base font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5 mr-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                </svg>
+                {t('auth.register.title')}
+              </span>
+            </div>
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white">
+              {t('auth.register.createAccount')} <br className="hidden sm:block" />
+              <span className="text-accent">{t('auth.register.joinUs')}</span>
+            </h1>
           </div>
-        </div>
-      </section>
 
-      <div className="container-custom py-12 w-full max-w-4xl mx-auto">
-        <div className="w-full">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="backdrop-blur-md bg-white/10 rounded-xl shadow-xl p-8 border border-white/20">
             {formSuccess ? (
-              <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mb-6 flex items-center">
+              <div className="bg-green-50/90 backdrop-blur-sm border border-green-200 text-green-700 p-4 rounded-lg mb-6 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-2 text-green-500">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -82,13 +76,13 @@ export const RegisterForm: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {error && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                  <div className="bg-red-50/90 backdrop-blur-sm border border-red-200 text-red-700 px-4 py-3 rounded-lg">
                     {error}
                   </div>
                 )}
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
                     {t('auth.register.email')}
                   </label>
                   <input
@@ -97,46 +91,48 @@ export const RegisterForm: React.FC = () => {
                     name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
                     required
                     placeholder={t('auth.register.emailPlaceholder')}
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-1">
-                    {t('auth.register.firstName')}
-                  </label>
-                  <input
-                    type="text"
-                    id="first-name"
-                    name="first-name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                    required
-                    placeholder={t('auth.register.firstNamePlaceholder')}
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="first-name" className="block text-sm font-medium text-white mb-1">
+                      {t('auth.register.firstName')}
+                    </label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="first-name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
+                      required
+                      placeholder={t('auth.register.firstNamePlaceholder')}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="last-name" className="block text-sm font-medium text-white mb-1">
+                      {t('auth.register.lastName')}
+                    </label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
+                      required
+                      placeholder={t('auth.register.lastNamePlaceholder')}
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 mb-1">
-                    {t('auth.register.lastName')}
-                  </label>
-                  <input
-                    type="text"
-                    id="last-name"
-                    name="last-name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                    required
-                    placeholder={t('auth.register.lastNamePlaceholder')}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="password" className="block text-sm font-medium text-white mb-1">
                     {t('auth.register.password')}
                   </label>
                   <input
@@ -145,14 +141,14 @@ export const RegisterForm: React.FC = () => {
                     name="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
                     required
                     placeholder={t('auth.register.passwordPlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="password-confirm" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="password-confirm" className="block text-sm font-medium text-white mb-1">
                     {t('auth.register.passwordConfirm')}
                   </label>
                   <input
@@ -161,7 +157,7 @@ export const RegisterForm: React.FC = () => {
                     name="password-confirm"
                     value={passwordConfirm}
                     onChange={(e) => setPasswordConfirm(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
                     required
                     placeholder={t('auth.register.passwordConfirmPlaceholder')}
                   />
@@ -170,24 +166,33 @@ export const RegisterForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-white text-primary px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-accent hover:text-white shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? t('auth.register.loading') : t('auth.register.submit')}
                 </button>
 
                 <div className="text-center">
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-white/80">
                     {t('auth.register.haveAccount')}{' '}
-                    <a href="/login" className="text-primary hover:text-primary-dark font-medium">
+                    <Link to="/login" className="text-accent hover:text-white font-medium">
                       {t('auth.register.login')}
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </form>
             )}
           </div>
+          
+          <div className="text-center">
+            <Link to="/" className="border-2 border-white px-4 sm:px-6 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-white hover:text-primary shadow-lg hover:shadow-xl flex items-center justify-center sm:justify-start backdrop-blur-sm text-white inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+              {t('navigation.home')}
+            </Link>
+          </div>
         </div>
       </div>
-    </Layout>
+    </AuthLayout>
   );
 }; 

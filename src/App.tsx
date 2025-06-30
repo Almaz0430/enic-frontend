@@ -21,7 +21,7 @@ import {
 
 const App = () => {
   // Базовый путь из конфигурации Vite
-  const basename = '/static';
+  const basename = '/';
   
   return (
     <QueryProvider>

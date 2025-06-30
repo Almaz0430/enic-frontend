@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@providers/AuthProvider';
 import { useTranslation } from 'react-i18next';
-import { Layout } from '@widgets/Layout/ui/Layout';
+import { AuthLayout } from '@widgets/Layout/ui/AuthLayout';
 
 export const LoginForm = () => {
   const { t } = useTranslation();
@@ -42,34 +42,28 @@ export const LoginForm = () => {
   };
 
   return (
-    <Layout>
-      {/* Верхний баннер с заголовком */}
-      <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-12 relative overflow-hidden">
-        {/* Декоративные элементы */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
-          <div className="absolute bottom-10 right-20 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
-        </div>
-        
-        <div className="container-custom relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            {t('auth.login.title')}
-          </h1>
-          
-          <div className="relative mb-6">
-            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-accent"></div>
-            <p className="text-lg mb-8 text-white/90 max-w-2xl pl-4">
-              {t('auth.login.subtitle')}
-            </p>
+    <AuthLayout>
+      <div className="flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <div className="text-center">
+            <div className="bg-white/10 inline-block rounded-lg px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 backdrop-blur-sm">
+              <span className="text-white/90 text-sm sm:text-base font-medium flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5 mr-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                </svg>
+                {t('auth.login.title')}
+              </span>
+            </div>
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white">
+              {t('auth.login.welcomeBack')} <br className="hidden sm:block" />
+              <span className="text-accent">{t('auth.login.signIn')}</span>
+            </h1>
           </div>
-        </div>
-      </section>
 
-      <div className="container-custom py-12">
-        <div className="max-w-md mx-auto">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="backdrop-blur-md bg-white/10 rounded-xl shadow-xl p-8 border border-white/20">
             {formSuccess ? (
-              <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mb-6 flex items-center">
+              <div className="bg-green-50/90 backdrop-blur-sm border border-green-200 text-green-700 p-4 rounded-lg mb-6 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-2 text-green-500">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -78,13 +72,13 @@ export const LoginForm = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {error && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                  <div className="bg-red-50/90 backdrop-blur-sm border border-red-200 text-red-700 px-4 py-3 rounded-lg">
                     {error}
                   </div>
                 )}
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
                     {t('auth.login.email')}
                   </label>
                   <input
@@ -93,14 +87,14 @@ export const LoginForm = () => {
                     name="email"
                     value={email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
                     required
                     placeholder={t('auth.login.emailPlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="password" className="block text-sm font-medium text-white mb-1">
                     {t('auth.login.password')}
                   </label>
                   <input
@@ -109,7 +103,7 @@ export const LoginForm = () => {
                     name="password"
                     value={password}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent text-white placeholder-white/60"
                     required
                     placeholder={t('auth.login.passwordPlaceholder')}
                   />
@@ -118,30 +112,39 @@ export const LoginForm = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-white text-primary px-4 sm:px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-accent hover:text-white shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? t('auth.login.loading') : t('auth.login.submit')}
                 </button>
 
                 <div className="text-center space-y-4">
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-white/80">
                     {t('auth.login.noAccount')}{' '}
-                    <a href="/register" className="text-primary hover:text-primary-dark font-medium">
+                    <Link to="/register" className="text-accent hover:text-white font-medium">
                       {t('auth.login.register')}
-                    </a>
+                    </Link>
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-white/80">
                     {t('auth.login.university')}{' '}
-                    <a href="/register-university" className="text-primary hover:text-primary-dark font-medium">
+                    <Link to="/register-university" className="text-accent hover:text-white font-medium">
                       {t('auth.login.registerUniversity')}
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </form>
             )}
           </div>
+          
+          <div className="text-center">
+            <Link to="/" className="border-2 border-white px-4 sm:px-6 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-white hover:text-primary shadow-lg hover:shadow-xl flex items-center justify-center sm:justify-start backdrop-blur-sm text-white inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+              {t('navigation.home')}
+            </Link>
+          </div>
         </div>
       </div>
-    </Layout>
+    </AuthLayout>
   );
 }; 

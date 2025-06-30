@@ -58,6 +58,46 @@
         "title": "Bologna Process",
         "description": "Information about the implementation of the Bologna Process principles in Kazakhstan",
         "link": "Learn More"
+      },
+      "educationRegistry": {
+        "title": "Registry of Higher Education Programs",
+        "description": "Access to the unified registry of higher professional education programs",
+        "link": "Learn More"
+      },
+      "bolognaMonitoring": {
+        "title": "Bologna Process Parameters Monitoring",
+        "description": "Information on monitoring and evaluation of Bologna Process parameters in Kazakhstan",
+        "link": "Learn More"
+      },
+      "academicRecognition": {
+        "title": "Recognition of Academic Degrees and Qualifications",
+        "description": "Procedures and requirements for recognition of academic degrees and qualifications",
+        "link": "Learn More"
+      },
+      "tokyoConvention": {
+        "title": "Tokyo Convention Ratification",
+        "description": "Information on the ratification and implementation of the Tokyo Convention in Kazakhstan",
+        "link": "Learn More"
+      },
+      "research": {
+        "title": "Research Activities",
+        "description": "Directions and results of research activities of the center",
+        "link": "Learn More"
+      },
+      "analytics": {
+        "title": "Information and Analytical Activities",
+        "description": "Analytical reports and research in the field of higher education",
+        "link": "Learn More"
+      },
+      "careerProgram": {
+        "title": "«Mamandyktym-bolashagym» Program",
+        "description": "Information about the career guidance and development program",
+        "link": "Learn More"
+      },
+      "projects": {
+        "title": "Project Implementation",
+        "description": "Current and completed center projects in the field of education",
+        "link": "Learn More"
       }
     }
   },
@@ -85,6 +125,8 @@
   "faqBlock": {
     "title": "Frequently Asked Questions",
     "subtitle": "Answers to the most common questions about our center",
+    "topLabel": "FAQ",
+    "moreQuestions": "Still have questions?",
     "items": [
       {
         "question": "How to schedule a consultation?",
@@ -230,6 +272,8 @@
     "login": {
       "title": "Sign In",
       "subtitle": "Sign in to your account to access your personal dashboard",
+      "welcomeBack": "Welcome back",
+      "signIn": "sign in now",
       "email": "Email",
       "emailPlaceholder": "Enter your email",
       "password": "Password",
@@ -245,6 +289,8 @@
     "register": {
       "title": "Registration",
       "subtitle": "Create a new account",
+      "createAccount": "Create an account",
+      "joinUs": "join our community",
       "email": "Email",
       "emailPlaceholder": "Enter your email",
       "password": "Password",
@@ -264,6 +310,8 @@
     "registerUniversity": {
       "title": "University Registration",
       "subtitle": "Create an account for your university and get access to advanced platform features",
+      "registerInstitution": "Register your institution",
+      "joinNetwork": "join our network",
       "email": "Email",
       "emailPlaceholder": "Enter university email",
       "universityName": "University Name",
