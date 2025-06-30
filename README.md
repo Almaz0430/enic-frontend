@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# ENIC Kazakhstan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О проекте | About the project
 
-Currently, two official plugins are available:
+### Русский
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ENIC Kazakhstan - веб-портал Национального центра развития высшего образования Республики Казахстан. Платформа предоставляет информацию о Болонском процессе, реестре образовательных программ вузов, процедурах аккредитации и признания документов об образовании.
 
-## Expanding the ESLint configuration
+РГП на ПХВ "Национальный Центр развития высшего образования" МНВО РК – подведомственная организация Министерства науки и высшего образования Республики Казахстан. Центр создан 31 августа 2012 года для методологического, научно-методического и информационно-аналитического сопровождения реализации параметров Болонского процесса в Республике Казахстан.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### English
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+ENIC Kazakhstan is the web portal of the National Center for Higher Education Development of the Republic of Kazakhstan. The platform provides information about the Bologna Process, registry of higher education programs, accreditation procedures, and recognition of educational documents.
+
+The RSE on REM "National Center for Higher Education Development" of the MSHE RK is a subordinate organization of the Ministry of Science and Higher Education of the Republic of Kazakhstan. The Center was established on August 31, 2012, to provide methodological, scientific-methodical, and information-analytical support for implementing the Bologna Process parameters in the Republic of Kazakhstan.
+
+## Технологии | Technologies
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- i18next (Многоязычность | Multilingual support)
+- React Router
+- Framer Motion (Анимации | Animations)
+- Axios
+
+## Структура проекта | Project Structure
+
+Проект организован по методологии Feature-Sliced Design (FSD):
+
+```
+src/
+├── app/            # Инициализация приложения | App initialization
+├── pages/          # Страницы | Pages
+├── widgets/        # Композиционные блоки | Compositional blocks
+├── features/       # Функциональные блоки | Functional blocks
+├── entities/       # Бизнес-сущности | Business entities
+├── shared/         # Переиспользуемые модули | Reusable modules
+└── assets/         # Статические ресурсы | Static resources
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Установка и запуск | Installation and Running
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Требования | Requirements
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js 16+
+- npm или yarn
+
+### Установка | Installation
+
+```bash
+# Клонирование репозитория | Clone the repository
+git clone https://github.com/your-username/enic-react.git
+cd enic-react
+
+# Установка зависимостей | Install dependencies
+npm install
+# или | or
+yarn install
 ```
+
+### Запуск для разработки | Development
+
+```bash
+npm run dev
+# или | or
+yarn dev
+```
+
+Приложение будет доступно по адресу | The application will be available at: `http://localhost:5173`
+
+### Сборка | Build
+
+```bash
+npm run build
+# или | or
+yarn build
+```
+
+Собранные файлы будут находиться в директории `build` | The built files will be located in the `build` directory.
+
+## Многоязычность | Multilingual Support
+
+Проект поддерживает три языка | The project supports three languages:
+- Русский | Russian
+- Английский | English
+- Казахский | Kazakh
+
+Файлы переводов находятся в директории `public/locales/` | Translation files are located in the `public/locales/` directory.

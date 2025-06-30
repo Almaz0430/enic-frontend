@@ -58,11 +58,6 @@ export const RegisterForm: React.FC = () => {
                 {t('auth.register.title')}
               </span>
             </div>
-            
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-              {t('auth.register.createAccount')} <br className="hidden sm:block" />
-              <span className="text-accent">{t('auth.register.joinUs')}</span>
-            </h1>
           </div>
 
           <div className="backdrop-blur-md bg-white/10 rounded-xl shadow-xl p-8 border border-white/20">

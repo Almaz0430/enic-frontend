@@ -5,6 +5,8 @@ import BolognaPage from './Bologna/ui/BolognaPage';
 import NewsPage from './News/ui/NewsPage';
 import ContactsPage from './Contacts/ui/ContactsPage';
 import NotFoundPage from './NotFound/ui/NotFoundPage';
+import EducationRegistryPage from './EducationRegistry/ui/EducationRegistryPage';
+import AboutPage from './About/ui/AboutPage';
 
 export {
   HomePage,
@@ -13,5 +15,7 @@ export {
   BolognaPage,
   NewsPage,
   ContactsPage,
-  NotFoundPage
+  NotFoundPage,
+  EducationRegistryPage,
+  AboutPage
 }; 

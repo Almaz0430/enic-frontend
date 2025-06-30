@@ -6,7 +6,7 @@ import { QueryProvider } from '@providers/query';
 import { LoginForm } from '@features/auth/LoginForm';
 import { RegisterForm } from '@features/auth/RegisterForm';
 import { UniversityRegisterForm } from '@features/auth/UniversityRegisterForm';
-import { ProfilePage } from '@features/profile/ProfilePage';
+import { ProfilePage } from '@/pages/Profile/ui/ProfilePage';
 import { ProtectedRoute } from '@providers/ProtectedRoute';
 import { ScrollToTop } from '@providers/ScrollToTop';
 import {
@@ -16,7 +16,9 @@ import {
   BolognaPage,
   NewsPage,
   ContactsPage,
-  NotFoundPage
+  NotFoundPage,
+  EducationRegistryPage,
+  AboutPage
 } from '@/pages';
 
 const App = () => {
@@ -38,6 +40,8 @@ const App = () => {
                 <Route path="/news" element={<NewsPage />} />
                 <Route path="/news/:id" element={<NewsPage />} />
                 <Route path="/contacts" element={<ContactsPage />} />
+                <Route path="/education-registry" element={<EducationRegistryPage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/register" element={<RegisterForm />} />
                 <Route path="/register-university" element={<UniversityRegisterForm />} />

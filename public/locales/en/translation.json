@@ -364,5 +364,80 @@
     "noResults": "No results found",
     "required": "Required field",
     "optional": "Optional field"
+  },
+  "educationRegistry": {
+    "pageTitle": "Registry of Higher Education Programs",
+    "pageSubtitle": "Unified registry of higher professional education programs implemented in higher educational institutions of the Republic of Kazakhstan",
+    "infoBlock": "The registry of educational programs contains information about higher and postgraduate education programs implemented by universities in Kazakhstan. Here you can find detailed information about specialties, qualifications, and content of educational programs.",
+    "search": {
+      "title": "Search for a program",
+      "placeholder": "Name, code, or university"
+    },
+    "filters": {
+      "educationLevel": {
+        "title": "Education level",
+        "all": "All levels",
+        "bachelor": "Bachelor",
+        "master": "Master",
+        "doctorate": "Doctorate"
+      },
+      "accreditation": {
+        "title": "Accreditation",
+        "all": "All programs",
+        "accredited": "Accredited",
+        "notAccredited": "Not accredited"
+      }
+    },
+    "results": {
+      "found": "Programs found: {{count}}",
+      "notFound": "No programs found",
+      "loading": "Loading programs...",
+      "error": "Failed to load educational program data",
+      "demoData": "Displaying demo data"
+    },
+    "programCard": {
+      "accredited": "Accredited",
+      "level": "Level",
+      "duration": "Duration",
+      "details": "Details"
+    },
+    "aboutRegistry": {
+      "title": "About the Registry of Educational Programs",
+      "description": "The registry of higher and postgraduate education programs is a unified information system containing structured information about educational programs implemented by higher and postgraduate education organizations of the Republic of Kazakhstan.",
+      "tasks": "Main objectives of the registry:",
+      "tasksList": [
+        "Ensuring transparency and accessibility of information about implemented educational programs",
+        "Promoting academic mobility of students",
+        "Providing information to employers about graduates' qualifications",
+        "Monitoring educational programs to ensure quality of education"
+      ],
+      "updates": "The registry is constantly updated and supplemented with new educational programs as they are developed and approved by higher educational institutions."
+    }
+  },
+  "aboutPage": {
+    "title": "About the Center",
+    "subtitle": "National Center for Higher Education Development",
+    "history": {
+      "title": "History and Mission",
+      "text1": "Kazakhstan, having signed the Bologna Declaration in 2010, became the 47th country participating in the Bologna Process and the first Central Asian state recognized as a full member of the European Higher Education Area.",
+      "text2": "Each participating country assumes obligations to fulfill mandatory, recommended, and optional parameters of the Bologna Process.",
+      "text3": "The Center was established on August 31, 2012, to provide methodological, scientific-methodical, and information-analytical support for implementing the Bologna Process parameters in the Republic of Kazakhstan at the national level.",
+      "text4": "The foundation is the Decree of the President of the Republic of Kazakhstan dated December 7, 2010, No. 1118 \"On Approval of the State Program for the Development of Education of the Republic of Kazakhstan for 2011-2020\"."
+    },
+    "principles": {
+      "title": "Core Principles of Activity",
+      "principle1": {
+        "title": "Openness and Interaction",
+        "description": "Openness and interaction with higher educational institutions of Kazakhstan"
+      },
+      "principle2": {
+        "title": "Information Accessibility",
+        "description": "Accessibility of information to all stakeholders"
+      },
+      "principle3": {
+        "title": "Collegiality",
+        "description": "Collegiality in management and decision-making"
+      }
+    }
   }
 }

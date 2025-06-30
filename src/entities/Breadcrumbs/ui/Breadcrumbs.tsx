@@ -49,6 +49,10 @@ export const Breadcrumbs = () => {
         translationKey = 'auth.register.title';
       } else if (pathnames[i] === 'register-university') {
         translationKey = 'auth.registerUniversity.title';
+      } else if (pathnames[i] === 'education-registry') {
+        translationKey = 'educationRegistry.pageTitle';
+      } else if (pathnames[i] === 'profile') {
+        translationKey = 'profile.title';
       } else {
         // Если нет перевода, используем текст как есть
         translationKey = null;

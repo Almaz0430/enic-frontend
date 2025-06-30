@@ -56,11 +56,6 @@ export const UniversityRegisterForm: React.FC = () => {
                 {t('auth.registerUniversity.title')}
               </span>
             </div>
-            
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-              {t('auth.registerUniversity.registerInstitution')} <br className="hidden sm:block" />
-              <span className="text-accent text-xl sm:text-2xl lg:text-3xl">{t('auth.registerUniversity.joinNetwork')}</span>
-            </h1>
           </div>
 
           <div className="backdrop-blur-md bg-white/10 rounded-xl shadow-xl p-8 border border-white/20">
