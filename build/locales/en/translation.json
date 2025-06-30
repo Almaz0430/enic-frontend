@@ -1,0 +1,443 @@
+{
+  "app": {
+    "name": "ENIC Kazakhstan",
+    "description": "National Information Center for Academic Mobility"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "events": "Events",
+    "contacts": "Contacts",
+    "news": "News",
+    "bologna": "Bologna Process",
+    "accreditation": "Accreditation",
+    "recognition": "Recognition",
+    "notFound": "Page Not Found"
+  },
+  "header": {
+    "accessibility": "For visually impaired",
+    "logoAlt": "Logo",
+    "searchPlaceholder": "Search the site",
+    "login": "Log in"
+  },
+  "hero": {
+    "bolognaProcess": "Bologna process since 2010",
+    "title": "National Center",
+    "titleAccent": "for Higher Education Development",
+    "subtitle": "Subordinate organization of the Ministry of Science and Higher Education of the Republic of Kazakhstan",
+    "aboutButton": "About us",
+    "bolognaButton": "Bologna process",
+    "leadership": "Center leadership",
+    "positions": {
+      "director": "Director",
+      "deputyDirector": "Deputy Director",
+      "advisor": "Director's Advisor"
+    },
+    "degrees": {
+      "masterPublicAdmin": "Master of Public Administration",
+      "techSciCandidate": "Candidate of Technical Sciences",
+      "professor": "Professor"
+    }
+  },
+  "homePage": {
+    "title": "Welcome to ENIC Kazakhstan",
+    "subtitle": "National Information Center for Academic Mobility",
+    "infoBlocks": {
+      "recognition": {
+        "title": "Education Recognition",
+        "description": "Information about foreign education document recognition procedures",
+        "link": "Learn More"
+      },
+      "accreditation": {
+        "title": "Accreditation",
+        "description": "Information about educational program accreditation procedures",
+        "link": "Learn More"
+      },
+      "bologna": {
+        "title": "Bologna Process",
+        "description": "Information about the implementation of the Bologna Process principles in Kazakhstan",
+        "link": "Learn More"
+      },
+      "educationRegistry": {
+        "title": "Registry of Higher Education Programs",
+        "description": "Access to the unified registry of higher professional education programs",
+        "link": "Learn More"
+      },
+      "bolognaMonitoring": {
+        "title": "Bologna Process Parameters Monitoring",
+        "description": "Information on monitoring and evaluation of Bologna Process parameters in Kazakhstan",
+        "link": "Learn More"
+      },
+      "academicRecognition": {
+        "title": "Recognition of Academic Degrees and Qualifications",
+        "description": "Procedures and requirements for recognition of academic degrees and qualifications",
+        "link": "Learn More"
+      },
+      "tokyoConvention": {
+        "title": "Tokyo Convention Ratification",
+        "description": "Information on the ratification and implementation of the Tokyo Convention in Kazakhstan",
+        "link": "Learn More"
+      },
+      "research": {
+        "title": "Research Activities",
+        "description": "Directions and results of research activities of the center",
+        "link": "Learn More"
+      },
+      "analytics": {
+        "title": "Information and Analytical Activities",
+        "description": "Analytical reports and research in the field of higher education",
+        "link": "Learn More"
+      },
+      "careerProgram": {
+        "title": "«Mamandyktym-bolashagym» Program",
+        "description": "Information about the career guidance and development program",
+        "link": "Learn More"
+      },
+      "projects": {
+        "title": "Project Implementation",
+        "description": "Current and completed center projects in the field of education",
+        "link": "Learn More"
+      }
+    }
+  },
+  "newsFeed": {
+    "title": "News",
+    "allNews": "All news",
+    "news": [
+      {
+        "title": "Opening of a new educational direction",
+        "date": "June 15, 2025",
+        "excerpt": "We are pleased to announce the launch of a new educational direction that will help develop..."
+      },
+      {
+        "title": "Results of the annual project competition",
+        "date": "May 3, 2025",
+        "excerpt": "The results of the annual project competition, in which more than 200 teams participated..."
+      },
+      {
+        "title": "International cooperation: new perspectives",
+        "date": "April 27, 2025",
+        "excerpt": "Our center has signed a cooperation agreement with leading international organizations..."
+      }
+    ]
+  },
+  "faqBlock": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions about our center",
+    "topLabel": "FAQ",
+    "moreQuestions": "Still have questions?",
+    "items": [
+      {
+        "question": "How to schedule a consultation?",
+        "answer": "You can schedule a consultation through the form on our website, by phone, or by sending a request to our email. Our specialists will contact you within 24 hours to confirm your appointment."
+      },
+      {
+        "question": "What documents are required to participate in the programs?",
+        "answer": "To participate in the programs, you need a passport, an application form, and, depending on the program, additional documents confirming your eligibility. You can get a complete list of documents for a specific program from our consultants."
+      },
+      {
+        "question": "Can I get support remotely?",
+        "answer": "Yes, most of our consultations and programs are available in an online format. We use modern video communication tools to ensure high-quality remote interaction with our clients."
+      },
+      {
+        "question": "What are the benefits of membership in the center's community?",
+        "answer": "Membership in our center's community provides access to exclusive events, discounts on paid services, the opportunity to participate in closed programs, as well as regular information newsletters and priority registration for popular events."
+      },
+      {
+        "question": "How to become a volunteer at the center?",
+        "answer": "To become a volunteer, fill out the application form on our website in the \"Volunteering\" section. After reviewing your application, we will invite you for an interview where we will discuss possible areas of cooperation and work schedule."
+      }
+    ]
+  },
+  "mapEmbed": {
+    "title": "How to find us",
+    "subtitle": "We are located within walking distance from the city center",
+    "location": "Our location",
+    "mapTitle": "Center location map",
+    "mapView": "Map",
+    "satelliteView": "Satellite",
+    "weAreHere": "We are here",
+    "contactInfo": "Contact information",
+    "getDirections": "Get directions",
+    "address": {
+      "title": "Address",
+      "line1": "Republic of Kazakhstan, Astana,",
+      "line2": "70 Syganak Street, Office 202,",
+      "line3": "postal code: Z05K7B0"
+    },
+    "workingHours": {
+      "title": "Working hours",
+      "mondayFriday": "Monday-Friday",
+      "saturdayLabel": "Saturday",
+      "sundayLabel": "Sunday",
+      "weekdays": "9:00 AM - 6:00 PM",
+      "saturday": "10:00 AM - 3:00 PM",
+      "sunday": "Closed"
+    },
+    "contacts": {
+      "title": "Contacts",
+      "phone": "Phone: +7 (7172) 57-20-75",
+      "email": "E-mail: cbpiam@n-k.kz",
+      "followUs": "Follow us"
+    }
+  },
+  "footer": {
+    "contactInfo": "Contact Information",
+    "address": {
+      "line1": "Republic of Kazakhstan, Astana,",
+      "line2": "70 Syganak Street, Office 202,",
+      "line3": "postal code: Z05K7B0"
+    },
+    "phone": "+7 (7172) 57-20-75",
+    "email": "cbpiam@n-k.kz",
+    "aboutCenter": "About the Center",
+    "aboutLinks": {
+      "structure": "Structure",
+      "leadership": "Leadership",
+      "team": "Team"
+    },
+    "additional": "Additional",
+    "additionalLinks": {
+      "procurement": "Procurement",
+      "careers": "Careers",
+      "privacy": "Privacy Policy",
+      "accessibility": "Version for visually impaired"
+    },
+    "copyright": "All rights reserved. RSE on REM \"National Center for Higher Education Development\" of the MSHE RK"
+  },
+  "newsPage": {
+    "title": "News and announcements",
+    "subtitle": "Current information about events, activities and important changes in the field of education, accreditation and international cooperation in Kazakhstan",
+    "stayUpdated": "Stay updated",
+    "categories": "Categories",
+    "allNews": "All news",
+    "events": "Events",
+    "recognition": "Document Recognition",
+    "accreditation": "Accreditation",
+    "cooperation": "International Cooperation",
+    "subscribe": {
+      "title": "Subscribe to news",
+      "description": "Subscribe to our newsletter to always be aware of the latest news and events in Kazakhstan. We only send important information and never spam.",
+      "emailPlaceholder": "Your email",
+      "button": "Subscribe",
+      "privacy": "By clicking the button, you agree to our personal data processing policy"
+    },
+    "notFound": {
+      "title": "News not found",
+      "description": "There are no available news for the selected category. Try selecting another category."
+    }
+  },
+  "contactsPage": {
+    "title": "Contacts and feedback",
+    "subtitle": "Contact us in any convenient way",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "workingHours": "Working hours",
+    "form": {
+      "title": "Feedback form",
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Your message has been successfully sent"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "How to apply for document recognition?",
+          "answer": "To apply for document recognition, you need to fill out an application and provide the necessary documents to our center."
+        },
+        {
+          "question": "How long does the recognition procedure take?",
+          "answer": "The recognition procedure takes from 30 to 45 working days from the moment of submitting a complete package of documents."
+        },
+        {
+          "question": "What documents are needed for accreditation?",
+          "answer": "For accreditation, it is necessary to provide constituent documents, licenses, curricula and programs, as well as other documents according to the list."
+        }
+      ]
+    }
+  },
+  "notFoundPage": {
+    "title": "Page Not Found",
+    "subtitle": "Sorry, the requested page does not exist",
+    "button": "Return to Home",
+    "recommendations": "You might be looking for:"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Sign in to your account to access your personal dashboard",
+      "welcomeBack": "Welcome back",
+      "signIn": "sign in now",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "loading": "Signing in...",
+      "success": "Successfully signed in! Redirecting...",
+      "noAccount": "Don't have an account?",
+      "register": "Register",
+      "university": "Are you a university representative?",
+      "registerUniversity": "Register University"
+    },
+    "register": {
+      "title": "Registration",
+      "subtitle": "Create a new account",
+      "createAccount": "Create an account",
+      "joinUs": "join our community",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "passwordConfirm": "Confirm Password",
+      "passwordConfirmPlaceholder": "Repeat your password",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "submit": "Register",
+      "loading": "Registering...",
+      "success": "Registration successful! Redirecting...",
+      "haveAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "registerUniversity": {
+      "title": "University Registration",
+      "subtitle": "Create an account for your university and get access to advanced platform features",
+      "registerInstitution": "Register your institution",
+      "joinNetwork": "join our network",
+      "email": "Email",
+      "emailPlaceholder": "Enter university email",
+      "universityName": "University Name",
+      "universityNamePlaceholder": "Enter full university name",
+      "password": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "passwordConfirm": "Confirm Password",
+      "passwordConfirmPlaceholder": "Repeat password",
+      "submit": "Register University",
+      "loading": "Registering...",
+      "success": "Registration completed successfully! Redirecting...",
+      "hasAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "logout": "Sign Out",
+    "loginError": "Invalid email or password",
+    "registerError": "Registration error",
+    "passwordMismatch": "Passwords do not match",
+    "requiredField": "Required field"
+  },
+  "profile": {
+    "title": "Personal Dashboard",
+    "subtitle": "Manage your account and settings",
+    "mainInfo": "Main Information",
+    "additionalInfo": "Additional Information",
+    "email": "Email",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "universityName": "University Name",
+    "role": "Role",
+    "registrationDate": "Registration Date",
+    "edit": "Edit Profile",
+    "changePassword": "Change Password",
+    "error": "Failed to load profile data",
+    "roles": {
+      "user": "User",
+      "admin": "Administrator",
+      "university": "University"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "noResults": "No results found",
+    "required": "Required field",
+    "optional": "Optional field"
+  },
+  "educationRegistry": {
+    "pageTitle": "Registry of Higher Education Programs",
+    "pageSubtitle": "Unified registry of higher professional education programs implemented in higher educational institutions of the Republic of Kazakhstan",
+    "infoBlock": "The registry of educational programs contains information about higher and postgraduate education programs implemented by universities in Kazakhstan. Here you can find detailed information about specialties, qualifications, and content of educational programs.",
+    "search": {
+      "title": "Search for a program",
+      "placeholder": "Name, code, or university"
+    },
+    "filters": {
+      "educationLevel": {
+        "title": "Education level",
+        "all": "All levels",
+        "bachelor": "Bachelor",
+        "master": "Master",
+        "doctorate": "Doctorate"
+      },
+      "accreditation": {
+        "title": "Accreditation",
+        "all": "All programs",
+        "accredited": "Accredited",
+        "notAccredited": "Not accredited"
+      }
+    },
+    "results": {
+      "found": "Programs found: {{count}}",
+      "notFound": "No programs found",
+      "loading": "Loading programs...",
+      "error": "Failed to load educational program data",
+      "demoData": "Displaying demo data"
+    },
+    "programCard": {
+      "accredited": "Accredited",
+      "level": "Level",
+      "duration": "Duration",
+      "details": "Details"
+    },
+    "aboutRegistry": {
+      "title": "About the Registry of Educational Programs",
+      "description": "The registry of higher and postgraduate education programs is a unified information system containing structured information about educational programs implemented by higher and postgraduate education organizations of the Republic of Kazakhstan.",
+      "tasks": "Main objectives of the registry:",
+      "tasksList": [
+        "Ensuring transparency and accessibility of information about implemented educational programs",
+        "Promoting academic mobility of students",
+        "Providing information to employers about graduates' qualifications",
+        "Monitoring educational programs to ensure quality of education"
+      ],
+      "updates": "The registry is constantly updated and supplemented with new educational programs as they are developed and approved by higher educational institutions."
+    }
+  },
+  "aboutPage": {
+    "title": "About the Center",
+    "subtitle": "National Center for Higher Education Development",
+    "history": {
+      "title": "History and Mission",
+      "text1": "Kazakhstan, having signed the Bologna Declaration in 2010, became the 47th country participating in the Bologna Process and the first Central Asian state recognized as a full member of the European Higher Education Area.",
+      "text2": "Each participating country assumes obligations to fulfill mandatory, recommended, and optional parameters of the Bologna Process.",
+      "text3": "The Center was established on August 31, 2012, to provide methodological, scientific-methodical, and information-analytical support for implementing the Bologna Process parameters in the Republic of Kazakhstan at the national level.",
+      "text4": "The foundation is the Decree of the President of the Republic of Kazakhstan dated December 7, 2010, No. 1118 \"On Approval of the State Program for the Development of Education of the Republic of Kazakhstan for 2011-2020\"."
+    },
+    "principles": {
+      "title": "Core Principles of Activity",
+      "principle1": {
+        "title": "Openness and Interaction",
+        "description": "Openness and interaction with higher educational institutions of Kazakhstan"
+      },
+      "principle2": {
+        "title": "Information Accessibility",
+        "description": "Accessibility of information to all stakeholders"
+      },
+      "principle3": {
+        "title": "Collegiality",
+        "description": "Collegiality in management and decision-making"
+      }
+    }
+  }
+}

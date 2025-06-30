@@ -5,6 +5,7 @@ import { Layout } from '@widgets/Layout/ui/Layout';
 import type { User } from '@shared/api/auth';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 export const ProfilePage = () => {
   const { t } = useTranslation();
@@ -22,7 +23,31 @@ export const ProfilePage = () => {
   const handleLogout = async () => {
     try {
       setIsLoggingOut(true);
+      
+      // Получение CSRF-токена из cookie
+      const getCookie = (name: string): string => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+          return parts.pop()?.split(';').shift() || '';
+        }
+        return '';
+      };
+      
+      const csrfToken = getCookie('csrftoken');
+      
+      // Отправка запроса на выход из системы
+      await axios.post('/api/users/logout/', {}, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrfToken
+        },
+        withCredentials: true // Эквивалент credentials: 'include'
+      });
+      
+      // Вызов функции logout из контекста авторизации для обновления состояния
       await logout();
+      
       navigate('/');
     } catch (error) {
       console.error('Ошибка при выходе:', error);

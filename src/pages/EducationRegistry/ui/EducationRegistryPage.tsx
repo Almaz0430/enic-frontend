@@ -27,7 +27,7 @@ const EducationRegistryPage: React.FC = () => {
     const fetchPrograms = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://127.0.0.1:8000/api/programs/');
+        const response = await axios.get('https://web-production-eeb3.up.railway.app/api/programs/');
         setPrograms(response.data);
         setError(null);
       } catch (err) {
